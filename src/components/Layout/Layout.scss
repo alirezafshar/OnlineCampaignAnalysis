@@ -1,0 +1,28 @@
+@import '../../assets/sass/index.scss';
+
+.layout {
+  margin: 5vh auto 0;
+  border-radius: $rem-24;
+  padding: $rem-32;
+  background-color: $background-dashboard;
+  max-width: 1600px;
+  width: calc(100% - 32px);
+  min-height: 90vh;
+  height: 100%;
+  box-shadow: $shadow-block;
+
+  @include tablet {
+    width: calc(100% - 64px);
+  }
+
+  @include desktop {
+    width: calc(100% - 96px);
+  }
+
+  &__signature {
+    @include flex(row, center, center);
+    font-size: $rem-14;
+    color: $secondary;
+    height: 5vh;
+  }
+}

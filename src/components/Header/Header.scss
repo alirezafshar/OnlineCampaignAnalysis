@@ -1,0 +1,56 @@
+@import '../../assets/sass/index.scss';
+
+.header {
+  display: flex;
+  height: 80px;
+
+  &__businessInfo {
+    @include flex(row, '', center);
+    width: 40%;
+  }
+
+  &__logo {
+    width: 45px;
+
+    @include tablet {
+      width: 52px;
+    }
+  }
+
+  &__businessDesc {
+    display: none;
+    padding-top: $rem-10;
+
+    @include tablet {
+      @include flex(column);
+    }
+  }
+
+  &__title {
+    padding-left: $rem-10;
+    @extend %font-primary-bold;
+    font-size: $rem-24;
+  }
+
+  &__slang {
+    padding-left: $rem-10;
+    @extend %font-primary-light;
+    color: $secondary;
+  }
+
+  &__user {
+    @include flex(row, flex-end, center);
+    margin-left: auto;
+    width: 60%;
+  }
+
+  &__userIcon {
+    margin-right: $rem-16;
+    font-size: $rem-32;
+    fill: $primary;
+  }
+
+  &__name {
+    color: $secondary;
+  }
+}

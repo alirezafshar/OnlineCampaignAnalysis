@@ -1,0 +1,158 @@
+@import './assets/sass/index.scss';
+
+// reset stylesheets
+// prettier-ignore
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, 
+caption, tbody, tfoot, thead, tr, th, td, article, aside, button, canvas, details, figcaption, figure, footer, header, hgroup, 
+menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-body;
+  min-width: 320px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  @extend %font-primary-regular;
+  @include font(100%, 1.2);
+  color: $dark-gray;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+select {
+  padding: $rem-5;
+  font-size: $rem-14;
+}
+
+.sup {
+  position: absolute;
+  font-family: inherit;
+  font-size: $rem-12;
+  color: inherit;
+}
+
+// custom selectors
+.dashboard {
+  &__block {
+    position: relative;
+    @include flex(row, '', center);
+    flex-wrap: wrap;
+    margin: $rem-12 0;
+    border: 1px solid $background-body;
+    border-radius: $rem-10;
+    background-color: $white;
+    padding: $rem-24 $rem-16;
+    width: 100%;
+
+    @include desktop {
+      margin: $rem-12;
+    }
+  }
+
+  &__title {
+    @extend %font-primary-bold;
+    font-size: $rem-18;
+    color: $primary;
+  }
+
+  &__subtitle {
+    margin: $rem-32 auto $rem-10;
+    @extend %font-primary-bold;
+    font-size: $rem-28;
+
+    @include desktop {
+      text-align: center;
+    }
+  }
+
+  &__desc {
+    margin: 0 auto;
+    line-height: 1.5;
+    width: 100%;
+
+    @include desktop {
+      text-align: center;
+      width: 50%;
+    }
+  }
+
+  // this is not my code
+  // to have another shape follow this link: https://css-generators.com/ribbon-shapes/
+  &__ribbon {
+    --f: 0.5em; /* control the folded part */
+    @include position(absolute, 0, 0);
+    border-image: conic-gradient(#0008 0 0) 51% / var(--f);
+    padding-inline: 1lh;
+    padding-bottom: var(--f);
+    line-height: 1.8;
+    color: $white;
+    clip-path: polygon(
+      100% calc(100% - var(--f)),
+      100% 100%,
+      calc(100% - var(--f)) calc(100% - var(--f)),
+      var(--f) calc(100% - var(--f)),
+      0 100%,
+      0 calc(100% - var(--f)),
+      999px calc(100% - var(--f) - 999px),
+      calc(100% - 999px) calc(100% - var(--f) - 999px)
+    );
+    transform: translate(calc((cos(45deg) - 1) * 100%), -100%) rotate(-45deg);
+    transform-origin: 100% 100%;
+
+    &--blue {
+      background-color: $light-primary;
+    }
+
+    &--red {
+      background-color: $red;
+    }
+
+    &--green {
+      background-color: $green;
+    }
+
+    &--orange {
+      background-color: $orange;
+    }
+
+    &--purple {
+      background-color: $purple;
+    }
+
+    &--yellow {
+      background-color: $yellow;
+    }
+  }
+}

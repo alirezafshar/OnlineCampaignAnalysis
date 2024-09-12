@@ -1,0 +1,1 @@
+export { getCampaignsList } from './Campaign'

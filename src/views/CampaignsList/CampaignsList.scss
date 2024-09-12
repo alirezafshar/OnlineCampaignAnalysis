@@ -1,0 +1,91 @@
+@import '../../assets/sass/index.scss';
+
+.campList {
+  @include flex(column);
+  flex-wrap: wrap;
+  margin: $rem-46 00;
+  width: 100%;
+
+  @include desktop {
+    margin: $rem-46 $rem-12 0;
+    @include flex(row, space-between, center);
+  }
+
+  &__block {
+    position: relative;
+    margin-top: $rem-32;
+    border: 1px solid $background-body;
+    border-radius: $rem-10;
+    background-color: $white;
+    width: 100%;
+
+    @include desktop {
+      width: 32%;
+    }
+  }
+
+  &__info {
+    @include flex(row, flex-end, center);
+    padding: $rem-24 $rem-16 $rem-16;
+    min-height: 120px;
+    height: 100%;
+  }
+
+  &__summary {
+    @include flex(column, '', center);
+    width: 100%;
+
+    @include desktop {
+      @include flex(row);
+      width: 90%;
+    }
+  }
+
+  &__icon {
+    margin-bottom: $rem-16;
+    border-radius: 50%;
+    background-color: $primary;
+    padding: $rem-10;
+    font-size: $rem-46;
+    fill: $white;
+    opacity: 0.4;
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__caption {
+    @include flex(column);
+    gap: 5px;
+    width: 100%;
+
+    @media screen and (min-width: 375px) {
+      @include flex(row, space-around, center);
+    }
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include desktop {
+      margin-left: auto;
+      width: 80%;
+    }
+  }
+
+  &__title {
+    font-size: $rem-20;
+    color: $secondary;
+    text-align: center;
+  }
+
+  &__link {
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
