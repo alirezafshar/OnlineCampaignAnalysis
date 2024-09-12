@@ -1,8 +1,8 @@
 {
-  "homepage": "http://alirezafshar.github.io/OnlineCampaignAnalysis",
+  "homepage": "https://alirezafshar.github.io/OnlineCampaignAnalysis",
   "name": "loblaw-ui-test-js",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "predeploy": "vite build",
