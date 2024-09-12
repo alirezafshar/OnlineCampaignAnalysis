@@ -33,8 +33,7 @@ Your company uses external ad servers to manage and run the company’s online a
    Details
    _ API Endpoint: `/api/campaigns/:cid?number=num` 1. cid is an id from campaign list 1. num is an int >= 0
    _ Sample output:
-   `        { impressions: 40, clicks: 50, users: 87 }
-       `
+   `      { impressions: 40, clicks: 50, users: 87 }`
    _ Dashboard should ping the server every 5 seconds to get new data for a given cid (clicked in the list).
    _ Start by passing a query param of number=0, and increment it for every ping.
    _ Dashboard should include tiles for: 1. Total Impressions 1. Total Clicks 1. CTR - Short for Click Through Rate, calculated ((Total Clicks / Total Impressions) _ 100) 1. Total Users 1. Current Number (iteration/pull #) 1. Most Recent Impressions 1. Most Recent Clicks 1. Most Recent CTR 1. Most Recent Users
@@ -54,7 +53,3 @@ The API endpoints are already mocked for you using MSW. You will be able to see 
 ## Running Unit Tests
 
 > `npm test`
-
-### `Demo`
-
-https://alirezafshar.github.io/LandingPage/
