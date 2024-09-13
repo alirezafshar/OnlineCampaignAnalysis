@@ -1,1 +1,0 @@
-export { getCampaignsList } from './Campaign'
